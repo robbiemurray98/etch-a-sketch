@@ -1,8 +1,15 @@
-* {
+html {
     box-sizing: border-box;
 }
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
 
 .container {
     display: flex;
@@ -14,6 +21,7 @@
     border: 1px solid black;
     height: 25px;
     width: 25px;
+    flex-grow: 1;
 }
 
 .container>div:nth-child(17n + 1) {
@@ -21,3 +29,4 @@
    height: 0;
    border: 0;
 }
+
