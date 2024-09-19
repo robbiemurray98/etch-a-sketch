@@ -1,38 +1,31 @@
-const containerDiv = document.querySelector('.container');
+const container = document.querySelector('.container');
 
-const btn = document.querySelector('.btn');
+let userInput = +prompt('What size grid?');
 
-// create a variable that holds the user input
-// send that variable to a function turns the number given into a grid
+let totalBoxNumber = (userInput * userInput);
 
-// (num x num) + num + 1
+for (let i = 0; i < totalBoxNumber; i ++) {
+    const box = document.createElement('div');
+    box.classList = 'box';
+    box.style.border = '1px solid black';
 
-// once flex items are equal to numSum, wrap to a new line
+    container.appendChild(box);
+    
+};
 
-btn.addEventListener('click', () => {
-    let num = Number(prompt('Please enter a number.'));
-    let numSum = (num * num) + num + 1;
+const boxes = document.querySelectorAll('.box');
+let gridWidth = container.offsetWidth;
+let gridHeight = container.offsetHeight;
 
-    for (let i = 1; i < numSum; i++) {
-        const div = document.createElement('div');
-        containerDiv.appendChild(div);
-        div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = 'blue';
-        })
-    };
+boxes.forEach((box) => {
+    box.style.width = 
+    `${gridWidth / userInput}px`;
 
+    box.style.height =
+    `${gridHeight / userInput}px`;
 });
 
 
-
-
-// for (let i = 1; i < 273; i++) {
-//     const div = document.createElement('div');
-//     containerDiv.appendChild(div);
-//     div.addEventListener('mouseover', () => {
-//         div.style.backgroundColor = 'blue';
-//     })
-// };
 
 
 
